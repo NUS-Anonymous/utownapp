@@ -31,6 +31,10 @@
             android:name=".Emergency"
             android:label="@string/title_activity_emergency"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".leave"
+            android:label="Upcoming Leave"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

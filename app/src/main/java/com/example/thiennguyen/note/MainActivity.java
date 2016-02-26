@@ -74,15 +74,8 @@ public class MainActivity extends ActionBarActivity {
     public void emerg(View view){
         startActivity(new Intent(MainActivity.this, Emergency.class));
     }
-
-    public void buttonClickHandler(View view) {
-        new DownloadWebpageTask(new AsyncResult() {
-            @Override
-            public void onResult(JSONObject object) {
-                processJson(object);
-            }
-        }).execute("https://spreadsheets.google.com/feeds/list/1JhvuagO_9cC1szr3zRr4_dr2TyGLnxPEm0zhbmOCky8/od6/public/basic?alt=json");
-
+    public void coming(View view){
+        startActivity(new Intent(MainActivity.this, leave.class));
     }
 
     private void processJson(JSONObject object) {
