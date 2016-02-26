@@ -33,6 +33,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.text.util.Linkify;
+import android.app.AlertDialog;
+
 
 public class MainActivity extends ActionBarActivity {
     private static final String DEBUG_TAG = "HttpExample";
@@ -45,23 +47,24 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new DownloadWebpageTask(new AsyncResult() {
-            @Override
-            public void onResult(JSONObject object) {
-                processJson(object);
-            }
-        }).execute("https://spreadsheets.google.com/feeds/list/1JhvuagO_9cC1szr3zRr4_dr2TyGLnxPEm0zhbmOCky8/od6/public/basic?alt=json");
-    /*
+        /*
         // listview = (ListView) findViewById(R.id.listview);
         btnDownload = (Button) findViewById(R.id.btnDownload);
+       */
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
         if (networkInfo != null && networkInfo.isConnected()) {
-            btnDownload.setEnabled(true);
+            new DownloadWebpageTask(new AsyncResult() {
+                @Override
+                public void onResult(JSONObject object) {
+                    processJson(object);
+                }
+            }).execute("https://spreadsheets.google.com/feeds/list/1JhvuagO_9cC1szr3zRr4_dr2TyGLnxPEm0zhbmOCky8/od6/public/basic?alt=json");
+
         } else {
-            btnDownload.setEnabled(false);
+            new AlertDialog.Builder(this).setTitle("No Internet again?").setMessage("Please connect to internet!").setNeutralButton("Close", null).show();
         }
-        */
+
     }
 
     public void buttonClickHandler(View view) {
