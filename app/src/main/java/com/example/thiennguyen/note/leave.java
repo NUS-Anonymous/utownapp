@@ -85,8 +85,10 @@ public class leave extends AppCompatActivity {
                 if (name.equals("error")){
                     continue;
                 }
+
+                JSONObject content = (JSONObject) row.get("content");
+                String wins = content.getString("$t").substring(6);
                 int position = 0;
-                int wins = 0;
                 int draws = 0;
                 int losses = 0;
                 int points = 0;

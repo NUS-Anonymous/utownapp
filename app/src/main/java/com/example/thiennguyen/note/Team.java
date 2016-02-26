@@ -5,11 +5,11 @@ package com.example.thiennguyen.note;
  */
 public class Team {
     private int position;
-    private String name;
-    private int wins, draws, losses;
+    private String name,wins;
+    private int draws, losses;
     private int points;
 
-    public Team(int position, String name, int wins, int draws, int losses, int points)
+    public Team(int position, String name, String wins, int draws, int losses, int points)
     {
         this.setPosition(position);
         this.setName(name);
@@ -35,11 +35,11 @@ public class Team {
         this.name = name;
     }
 
-    public int getWins() {
+    public String getWins() {
         return wins;
     }
 
-    public void setWins(int wins) {
+    public void setWins(String wins) {
         this.wins = wins;
     }
 

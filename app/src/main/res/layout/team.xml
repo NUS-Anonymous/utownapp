@@ -9,40 +9,50 @@
         android:text="1"
         android:layout_width="0dp"
         android:layout_weight=".10"
-        android:layout_height="wrap_content" />
+        android:textSize="50dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/name"
         android:text="Preston North End"
-        android:layout_width="0dp"
-        android:layout_weight=".50"
-        android:layout_height="wrap_content" />
+        android:layout_width="123dp"
+        android:textSize="20dp"
+        android:layout_height="130dp"
+        android:layout_weight="0.80" />
 
     <TextView
         android:id="@+id/wins"
         android:text="18"
         android:layout_width="0dp"
-        android:layout_weight=".10"
-        android:layout_height="wrap_content" />
+        android:layout_weight="1.70"
+        android:textSize="20dp"
+        android:layout_height="120dp" />
 
     <TextView
         android:id="@+id/draws"
         android:text="4"
         android:layout_width="0dp"
         android:layout_weight=".10"
-        android:layout_height="wrap_content" />
+        android:textSize="50dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/losses"
         android:text="0"
         android:layout_width="0dp"
         android:layout_weight=".10"
-        android:layout_height="wrap_content" />
+        android:textSize="50dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/points"
         android:text="40"
         android:layout_width="0dp"
         android:layout_weight=".10"
-        android:layout_height="wrap_content" />
+        android:textSize="50dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
 </LinearLayout>
