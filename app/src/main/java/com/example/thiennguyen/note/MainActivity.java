@@ -34,13 +34,14 @@ import java.util.List;
 
 import android.text.util.Linkify;
 import android.app.AlertDialog;
+import android.content.Intent;
 
 
 public class MainActivity extends ActionBarActivity {
     private static final String DEBUG_TAG = "HttpExample";
     ArrayList<Team> teams = new ArrayList<Team>();
     ListView listview;
-    Button btnDownload;
+    Button btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,9 @@ public class MainActivity extends ActionBarActivity {
        */
         ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
+
+
+
         if (networkInfo != null && networkInfo.isConnected()) {
             new DownloadWebpageTask(new AsyncResult() {
                 @Override
@@ -65,6 +69,10 @@ public class MainActivity extends ActionBarActivity {
             new AlertDialog.Builder(this).setTitle("No Internet again?").setMessage("Please connect to internet!").setNeutralButton("Close", null).show();
         }
 
+    }
+
+    public void emerg(View view){
+        startActivity(new Intent(MainActivity.this, Emergency.class));
     }
 
     public void buttonClickHandler(View view) {

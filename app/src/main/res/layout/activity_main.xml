@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/Duty"
             android:text="On Duty"
+            android:enabled="false"
             android:layout_width="wrap_content"
             android:layout_weight="0.50" />
 
@@ -31,14 +32,17 @@
             android:id="@+id/emergency"
             android:text="Emergency Contact"
             android:layout_width="wrap_content"
-            android:layout_weight="0.50"/>
+            android:layout_weight="0.50"
+            android:onClick="emerg"/>
 
         <Button
             android:layout_height="wrap_content"
             android:id="@+id/Leave"
             android:text="On Leave"
             android:layout_width="wrap_content"
+            android:onClick="buttonClickHandler"
             android:layout_weight="0.50"/>
+
 
     </LinearLayout>
 
@@ -46,10 +50,11 @@
     <FrameLayout
         android:layout_height="100dp"
         android:layout_width="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="false"
         android:layout_weight="0.3"
-        android:id="@+id/frameLayout">
+        android:id="@+id/frameLayout"
+        android:layout_marginTop="0dp">
 
         <GridLayout
             android:layout_width="match_parent"
@@ -92,7 +97,8 @@
         android:layout_weight ="0.5"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/frameLayout">
+        android:layout_below="@+id/frameLayout"
+        android:layout_above="@+id/linearLayout">
 
         <LinearLayout
             android:orientation="vertical"
