@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".MainActivity">
+
+
+
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:id="@+id/Duty"
+            android:text="On Duty"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.50" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:id="@+id/emergency"
+            android:text="Emergency Contact"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.50"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:id="@+id/Leave"
+            android:text="On Leave"
+            android:layout_width="wrap_content"
+            android:layout_weight="0.50"/>
+
+    </LinearLayout>
+
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Loading..."
+            android:id="@+id/RA1"
+            android:textIsSelectable="true"
+        android:layout_above="@+id/RA2"
+        android:layout_alignLeft="@+id/RA2"
+        android:layout_alignStart="@+id/RA2"
+        android:layout_marginBottom="59dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+
+                android:autoLink="all"
+                android:text="Loading..."
+                android:id="@+id/phone1"
+                android:textIsSelectable="true"
+                android:linksClickable="true"
+
+                android:layout_gravity="right"
+                android:layout_alignTop="@+id/RA1"
+                android:layout_alignLeft="@+id/phone2"
+                android:layout_alignStart="@+id/phone2" />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Loading..."
+            android:id="@+id/RA2"
+                android:textIsSelectable="true"
+                android:layout_marginBottom="66dp"
+                android:layout_above="@+id/RA3"
+                android:layout_alignLeft="@+id/RA3"
+                android:layout_alignStart="@+id/RA3" />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Loading..."
+            android:id="@+id/phone2"
+                android:textIsSelectable="true"
+                android:layout_gravity="right"
+                android:layout_alignTop="@+id/RA2"
+                android:layout_alignLeft="@+id/phone3"
+                android:layout_alignStart="@+id/phone3" />
+
+            <TextView
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Loading..."
+            android:id="@+id/RA3"
+                android:textIsSelectable="true"
+                android:layout_weight="0.40"
+                android:layout_marginLeft="33dp"
+                android:layout_marginStart="33dp"
+                android:layout_marginBottom="146dp"
+                android:layout_above="@+id/linearLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Loading..."
+            android:id="@+id/phone3"
+                android:textIsSelectable="true"
+                android:layout_gravity="right"
+                android:contextClickable="true"
+                android:layout_alignTop="@+id/RA3"
+                android:layout_toRightOf="@+id/RA3"
+                android:layout_toEndOf="@+id/RA3" />
+
+</RelativeLayout>
