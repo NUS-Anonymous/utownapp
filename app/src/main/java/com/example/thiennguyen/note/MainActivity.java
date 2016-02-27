@@ -31,10 +31,12 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import android.os.Handler;
 
 import android.text.util.Linkify;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -42,6 +44,7 @@ public class MainActivity extends ActionBarActivity {
     ArrayList<Team> teams = new ArrayList<Team>();
     ListView listview;
     Button btn;
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,9 +76,33 @@ public class MainActivity extends ActionBarActivity {
 
     public void emerg(View view){
         startActivity(new Intent(MainActivity.this, Emergency.class));
+        finish();
+
     }
     public void coming(View view){
         startActivity(new Intent(MainActivity.this, leave.class));
+        finish();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
 
     private void processJson(JSONObject object) {

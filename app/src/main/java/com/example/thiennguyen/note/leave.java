@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,7 @@ import java.text.SimpleDateFormat;
 
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -37,6 +39,7 @@ import java.util.List;
 public class leave extends AppCompatActivity {
     ListView listview;
     ArrayList<Team> teams = new ArrayList<Team>();
+    boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,9 +72,30 @@ public class leave extends AppCompatActivity {
 
     public void onDuty(View view){
         startActivity(new Intent(leave.this, MainActivity.class));
+        finish();
     }
     public void emerg(View view){
         startActivity(new Intent(leave.this, Emergency.class));
+        finish();
+    }
+    @Override
+    public void onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
     private void processJson(JSONObject object) {
 
